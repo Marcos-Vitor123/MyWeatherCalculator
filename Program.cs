@@ -6,7 +6,7 @@ namespace MyWeatherCalculator
     {
         private static void Main(string[] args)
         {
-            
+            // Continuação em Breve!
         }
     }
 }
