@@ -21,7 +21,7 @@
 
 - Mensagens
     - Quanto tempo você têm?
-    - Adicione a tarefa!
+    - Qual o nome da tarefa?
     - Quanto tempo para essa tarefa?
 
 - Funcionalidades
@@ -37,3 +37,6 @@
     - Imprimir na tela 
     - Salvar em um arquivo .txt
     - Converter horas, minutos e segundos
+
+- Cabeçalhos
+    - Bem vindo a Calculadora do Tempo!
