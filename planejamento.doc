@@ -1,7 +1,7 @@
 - Funções
-    - Horas
-    - Minutos
-    - Segundos
+    - Horas *
+    - Minutos *
+    - Segundos *
     - ConverterDadosRecebidos
     - ImprimirTela
     - Salvar
@@ -12,9 +12,9 @@
     - minutos 
     - segundos
     - tempoDisponivel
-    - conversorHoras
-    - conversorMinutos
-    - conversorSegundos
+    - conversorHoras *
+    - conversorMinutos *
+    - conversorSegundos *
 
 - Listas
     - adicionarTarefas
