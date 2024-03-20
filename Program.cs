@@ -12,11 +12,11 @@ namespace MyWeatherCalculator
 
         public static int removerDia = 1;
         public static int subtrairMinuto = 1;
-        public static int horas = 24 - removerDia;
+        public static int horas = 24 - removerDia; // Evita aparecer dia no resultado Ex: 1.23:30:00
         public static int minutos = 60;
         public static int segundos = 60;
-        public static TimeSpan tempoDisponivelReal;
         public static TimeSpan tempoDisponivel;
+        public static TimeSpan tempoDisponivelReal;
         public static TimeSpan Hora = new(horas, minutos, segundos); // TimeSpan -> É uma estrutura. E aqui representa 60 horas
 
         public static void Menu()
