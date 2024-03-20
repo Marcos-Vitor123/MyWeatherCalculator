@@ -5,6 +5,10 @@
 
  ## Planejamento básico do projeto
 
+Aqui é onde se tem uma visão geral sobre o desenvolvimento e quais caminhos direcionar.
+
+> OBS: Pode haver alterações durante o desenvolvimento
+
 - [ ] Funções
     - [ ] ConverterDadosRecebidos
     - [ ] ImprimirTela
