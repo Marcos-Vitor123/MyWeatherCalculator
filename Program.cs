@@ -10,7 +10,12 @@ namespace MyWeatherCalculator
             // Continuação em Breve!
         }
 
-        // Declarações das variáveis
+        public static int horas;
+        public static int minutos;
+        public static int segundos;
+        public static int tempoDisponivel;
+
+        TimeSpan Hora = new(60, 0, 0); // TimeSpan -> É uma estrutura. E aqui representa 60 horas
 
         public static void Menu()
         {
