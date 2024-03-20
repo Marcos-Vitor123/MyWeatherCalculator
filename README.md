@@ -13,13 +13,13 @@ Aqui é onde se tem uma visão geral sobre o desenvolvimento e quais caminhos di
     - [ ] ConverterDadosRecebidos
     - [ ] ImprimirTela
     - [ ] Salvar
-    - [ ] Menu
+    - [x] Menu
     
 - [ ] Variáveis
-    - [ ] horas 
-    - [ ] minutos 
-    - [ ] segundos
-    - [ ] tempoDisponivel
+    - [x] horas 
+    - [x] minutos 
+    - [x] segundos
+    - [x] tempoDisponivel
 
 - [ ] Listas
     - [ ] adicionarTarefas
@@ -41,8 +41,7 @@ Aqui é onde se tem uma visão geral sobre o desenvolvimento e quais caminhos di
     - [ ] Armazenar dados
     - [ ] Imprimir na tela 
     - [ ] Salvar em um arquivo .txt
-    - [ ] Converter horas, minutos e segundos
 
 - [ ] Cabeçalhos
-    - [ ] Bem vindo a Calculadora do Tempo!
+    - [x] Bem vindo a Calculadora do Tempo!
 
