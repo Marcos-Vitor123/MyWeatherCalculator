@@ -10,8 +10,8 @@ Aqui é onde se tem uma visão geral sobre o desenvolvimento e quais caminhos di
 > OBS: Pode haver alterações durante o desenvolvimento
 
 - [ ] Funções
-    - [ ] ConverterDadosRecebidos
-    - [ ] ImprimirTela
+    - [x] ConverterDadosRecebidos
+    - [x] ImprimirTela
     - [ ] Salvar
     - [x] Menu
     
