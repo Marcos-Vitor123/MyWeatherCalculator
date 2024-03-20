@@ -15,7 +15,7 @@ Aqui é onde se tem uma visão geral sobre o desenvolvimento e quais caminhos di
     - [ ] Salvar
     - [x] Menu
     
-- [ ] Variáveis
+- [x] Variáveis
     - [x] horas 
     - [x] minutos 
     - [x] segundos
@@ -42,6 +42,6 @@ Aqui é onde se tem uma visão geral sobre o desenvolvimento e quais caminhos di
     - [ ] Imprimir na tela 
     - [ ] Salvar em um arquivo .txt
 
-- [ ] Cabeçalhos
+- [x] Cabeçalhos
     - [x] Bem vindo a Calculadora do Tempo!
 
