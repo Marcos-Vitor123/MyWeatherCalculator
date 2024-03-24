@@ -9,24 +9,14 @@ namespace MyWeatherCalculator
             Menu();
             // Continuação em Breve!
         }
-
-        //public static int removerDia = 1;
-        //public static int subtrairMinuto = 1;
         public static int horas = 0; //- removerDia; // Evita aparecer dia no resultado Ex: 1.23:30:00
         public static int minutos = 0;
         public static int segundos = 0;
-
-        public static int teste = 30;
-        public static int teste2 = 60;
-        public static int teste3 = 15;
-
+        public static double teste = 30;
         public static TimeSpan novoTeste;
-        //public static double removerSinal;
         public static TimeSpan tempoDisponivel;
-        public static TimeSpan novoTempoHoras;
-        public static TimeSpan novoTempoMinutos;
-        public static TimeSpan tempoDisponivelReal;
-        public static double tempoRestanteReal;
+        public static TimeSpan tempoHoras;
+        public static TimeSpan tempoMinutos;
         public static TimeSpan tempoRestante;
         public static TimeSpan Hora = new(horas, minutos, segundos); // TimeSpan -> É uma estrutura.
 
@@ -48,24 +38,20 @@ namespace MyWeatherCalculator
         public static void Operacao()
         {
             CapturarDados();
-            //tempoDisponivel = Hora - TimeSpan.FromHours(horas);
-            //removerSinal = Math.Abs(tempoDisponivel.TotalHours); // remove sinal de menos do total de horas
-            novoTempoHoras = TimeSpan.FromHours(horas);
-            novoTempoMinutos = TimeSpan.FromMinutes(minutos);
-            tempoDisponivel = novoTempoHoras + novoTempoMinutos;
+            tempoHoras = TimeSpan.FromHours(horas);
+            tempoMinutos = TimeSpan.FromMinutes(minutos);
+            tempoDisponivel = tempoHoras + tempoMinutos;
 
             novoTeste = TimeSpan.FromMinutes(teste);
             tempoRestante = tempoDisponivel - novoTeste;
-            tempoRestanteReal = Math.Abs(tempoRestante.TotalHours);
 
-            //tempoDisponivelReal = tempoDisponivel - TimeSpan.FromMinutes(subtrairMinuto);
             ImprimirTela();
         }
 
         public static void ImprimirTela()
         {
             Console.WriteLine($"Você tem {tempoDisponivel} disponível");
-            Console.WriteLine($"Você tem {tempoRestanteReal} restante");
+            Console.WriteLine($"Você tem {tempoRestante} restante");
         }
     }
 }
