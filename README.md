@@ -25,7 +25,7 @@ Aqui é onde se tem uma visão geral sobre o desenvolvimento e quais caminhos di
     - [ ] adicionarTarefas
 
 - [ ] Mensagens
-    - [ ] Quanto tempo você têm?
+    - [x] Quanto tempo você têm?
     - [ ] Qual o nome da tarefa?
     - [ ] Quanto tempo para essa tarefa?
 
