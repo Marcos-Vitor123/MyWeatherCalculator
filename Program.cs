@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace MyWeatherCalculator
 {
@@ -7,32 +8,16 @@ namespace MyWeatherCalculator
         private static void Main(string[] args)
         {
             Menu();
-            Criar();
-            switch(opcao)
-            {
-                case 0:
-                {
-                    Menu();
-                    break;
-                }
-                case 1:
-                {
-                    Criar();
-                    break; 
-                }
-                default:
-                {
-                    Console.WriteLine("Opção inválida!");
-                    break;
-                }
-            }
+                    
             // Continuação em Breve!
         }
         public static int horas = 0; //- removerDia; // Evita aparecer dia no resultado Ex: 1.23:30:00
         public static int minutos = 0;
         public static int segundos = 0;
         public static int opcao;
-        public static double teste = 30;
+
+        public static double tempoDisponivelAtual;
+        public static double tempoDisponivelTotal;
         public static TimeSpan novoTeste;
         public static TimeSpan tempoDisponivel;
         public static TimeSpan tempoHoras;
@@ -65,36 +50,79 @@ namespace MyWeatherCalculator
             tempoMinutos = TimeSpan.FromMinutes(minutos);
             tempoDisponivel = tempoHoras + tempoMinutos;
 
-            novoTeste = TimeSpan.FromMinutes(teste);
+            novoTeste = TimeSpan.FromMinutes(tempoDisponivelTotal);
             tempoRestante = tempoDisponivel - novoTeste;
 
-            ImprimirTela();
+            ExibirTempoDisponivel();
         }
 
-        public static void ImprimirTela()
+        public static void ExibirTempoDisponivel()
         {
             Console.WriteLine($"Você tem {tempoDisponivel} disponível");
             Console.WriteLine($"Você tem {tempoRestante} restante");
+            MenuCriarTarefas();
         }
 
-        public static void Criar()
+        public static void MenuCriarTarefas()
         {
-            Console.Clear();
-
             Console.WriteLine("0 - Para terminar as tarefas.");
             Console.WriteLine("1 - Para criar as tarefas.");
 
+            Console.Write("Digite a opção: ");
+            opcao = int.Parse(Console.ReadLine());
+
+            while(opcao != 0)
+            {
+                Console.Clear();
+                Opcao();
+                Console.ReadKey();
+            }
+        }
+
+        public static void Opcao()
+        {
+            switch (opcao)
+            {
+                case 0:
+                {
+                    ExibirTarefas();
+                    break;
+                }
+                case 1:
+                {
+                    CriarTarefas();
+                    break; 
+                }
+                default:
+                {
+                    Console.WriteLine("Opção inválida!");
+                    break;
+                }
+            }
+        }
+
+        public static void ExibirTarefas()
+        {
+            for (int i = 0; i < nomeTarefa.Count; i++)
+            {
+                tempoDisponivelAtual = tempoTarefa[i];
+                Console.WriteLine($"{nomeTarefa[i]}: \t\t\t{tempoTarefa[i]}");
+                /*for(int j = 0; j < tempoTarefa.Count; j++)
+                {
+                    tempoDisponivelTotal = tempoDisponivelAtual + tempoTarefa[i];
+                }*/
+            }
+            //Console.WriteLine($"Tempo Disponível Total:\t{tempoDisponivelTotal}");
+        }
+
+        public static void CriarTarefas()
+        {
             Console.Write("Digite o nome da tarefa: ");
             nomeTarefa.Add(Console.ReadLine());
             Console.Write("Digite o tempo dessa tarefa: ");
             tempoTarefa.Add(double.Parse(Console.ReadLine()));
-
-            for (int i = 0; i < nomeTarefa.Count; i++)
-            {
-                Console.WriteLine($"{nomeTarefa[i]}: \t\t{tempoTarefa[i]}");
-            }
-
-            Console.ReadKey();
+            ExibirTarefas();
+            MenuCriarTarefas();
         }
     }
 }
