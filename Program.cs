@@ -15,6 +15,7 @@ namespace MyWeatherCalculator
         public static int minutos = 0;
         public static int segundos = 0;
         public static int opcao;
+        public static int contador;
 
         public static double tempoDisponivelAtual;
         public static double tempoDisponivelTotal;
@@ -103,16 +104,26 @@ namespace MyWeatherCalculator
 
         public static void ExibirTarefas()
         {
+            contador = 0;
             for (int i = 0; i < nomeTarefa.Count; i++)
             {
                 tempoDisponivelAtual = tempoTarefa[i];
+
                 Console.WriteLine($"{nomeTarefa[i]}: \t\t\t{tempoTarefa[i]}");
-                /*for(int j = 0; j < tempoTarefa.Count; j++)
+                for(int j = 0; j < tempoTarefa.Count; j++)
                 {
-                    tempoDisponivelTotal = tempoDisponivelAtual + tempoTarefa[i];
-                }*/
+                    contador++;
+                    if (contador > 1)
+                    {
+                        tempoDisponivelTotal += tempoDisponivelAtual;
+                    } else
+                    {
+                        tempoDisponivelTotal = tempoDisponivelAtual;
+                    }
+                }
             }
-            //Console.WriteLine($"Tempo Disponível Total:\t{tempoDisponivelTotal}");
+            contador--;
+            Console.WriteLine($"Tempo Disponível Total:\t{tempoDisponivelTotal}");
         }
 
         public static void CriarTarefas()
