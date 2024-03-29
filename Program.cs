@@ -18,6 +18,7 @@ namespace MyWeatherCalculator
         public static int contador;
 
         public static double tempoDisponivelAtual;
+        public static double tempoDisponivelAnterior = 0;
         public static double tempoDisponivelTotal;
         public static TimeSpan novoTeste;
         public static TimeSpan tempoDisponivel;
@@ -115,7 +116,8 @@ namespace MyWeatherCalculator
                     contador++;
                     if (contador > 1)
                     {
-                        tempoDisponivelTotal += tempoDisponivelAtual;
+                        tempoDisponivelTotal = tempoDisponivelAtual + tempoDisponivelAnterior;
+                        tempoDisponivelAnterior = tempoDisponivelAtual;
                     } else
                     {
                         tempoDisponivelTotal = tempoDisponivelAtual;
