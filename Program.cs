@@ -15,12 +15,9 @@ namespace MyWeatherCalculator
         public static int minutos = 0;
         public static int segundos = 0;
         public static int opcao;
-        public static int contador;
 
-        public static double tempoDisponivelAtual;
-        public static double tempoDisponivelAnterior = 0;
         public static double tempoDisponivelTotal;
-        public static TimeSpan novoTeste;
+        public static TimeSpan conversaoTempoDisponivelTotal;
         public static TimeSpan tempoDisponivel;
         public static TimeSpan tempoHoras;
         public static TimeSpan tempoMinutos;
@@ -52,8 +49,8 @@ namespace MyWeatherCalculator
             tempoMinutos = TimeSpan.FromMinutes(minutos);
             tempoDisponivel = tempoHoras + tempoMinutos;
 
-            novoTeste = TimeSpan.FromMinutes(tempoDisponivelTotal);
-            tempoRestante = tempoDisponivel - novoTeste;
+            conversaoTempoDisponivelTotal = TimeSpan.FromMinutes(tempoDisponivelTotal);
+            tempoRestante = tempoDisponivel - conversaoTempoDisponivelTotal;
 
             ExibirTempoDisponivel();
         }
@@ -73,12 +70,11 @@ namespace MyWeatherCalculator
             Console.Write("Digite a opção: ");
             opcao = int.Parse(Console.ReadLine());
 
-            while(opcao != 0)
+            do
             {
                 Console.Clear();
                 Opcao();
-                Console.ReadKey();
-            }
+            }while(opcao != 0);
         }
 
         public static void Opcao()
@@ -105,7 +101,6 @@ namespace MyWeatherCalculator
 
         public static void ExibirTarefas()
         {
-            contador = 0;
             for (int i = 0; i < tempoTarefa.Count; i++)
             {
                 tempoDisponivelTotal = tempoTarefa.Sum();
