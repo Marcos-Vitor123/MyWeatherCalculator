@@ -21,25 +21,25 @@ Aqui é onde se tem uma visão geral sobre o desenvolvimento e quais caminhos di
     - [x] segundos
     - [x] tempoDisponivel
 
-- [ ] Listas
-    - [ ] adicionarTarefas
+- [x] Listas
+    - [x] adicionarTarefas
 
-- [ ] Mensagens
+- [x] Mensagens
     - [x] Quanto tempo você têm?
-    - [ ] Qual o nome da tarefa?
-    - [ ] Quanto tempo para essa tarefa?
+    - [x] Qual o nome da tarefa?
+    - [x] Quanto tempo para essa tarefa?
 
 - [ ] Funcionalidades
-    - [ ] Capturar dados do usuário
-        - [ ] Nome da tarefa
-        - [ ] Horas, minutos ou segundos
+    - [x] Capturar dados do usuário
+        - [x] Nome da tarefa
+        - [x] Horas, minutos ou segundos
         - [ ] Capturar letra(sigla) que representa:
             - [ ] Horas(h)
             - [ ] Minutos(m)
             - [ ] Segundos(s)
         - [ ] Igualar maiúsculas e minúsculas
-    - [ ] Armazenar dados
-    - [ ] Imprimir na tela 
+    - [x] Armazenar dados
+    - [x] Imprimir na tela 
     - [ ] Salvar em um arquivo .txt
 
 - [x] Cabeçalhos

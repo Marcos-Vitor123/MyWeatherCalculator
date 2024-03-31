@@ -74,7 +74,9 @@ namespace MyWeatherCalculator
             {
                 Console.Clear();
                 Opcao();
-            }while(opcao != 0);
+            } while(opcao != 0);
+
+            ExibirTempoDisponivel();
         }
 
         public static void Opcao()
