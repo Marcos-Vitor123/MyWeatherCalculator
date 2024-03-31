@@ -32,6 +32,7 @@ namespace MyWeatherCalculator
             Console.Clear();
             Console.WriteLine("\n\tBem vindo a Calculadora do Tempo!\t\n");
             Operacao();
+            MenuCriarTarefas();
             Console.ReadKey();
         }
 
@@ -59,7 +60,6 @@ namespace MyWeatherCalculator
         {
             Console.WriteLine($"Você tem {tempoDisponivel} disponível");
             Console.WriteLine($"Você tem {tempoRestante} restante");
-            MenuCriarTarefas();
         }
 
         public static void MenuCriarTarefas()
@@ -84,6 +84,7 @@ namespace MyWeatherCalculator
                 case 0:
                 {
                     ExibirTarefas();
+                    ExibirTempoDisponivel();
                     break;
                 }
                 case 1:
