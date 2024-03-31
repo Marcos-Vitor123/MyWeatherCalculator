@@ -8,15 +8,14 @@ namespace MyWeatherCalculator
         private static void Main(string[] args)
         {
             Menu();
-                    
-            // Continuação em Breve!
         }
-        public static int horas = 0; //- removerDia; // Evita aparecer dia no resultado Ex: 1.23:30:00
+        public static int horas = 0;
         public static int minutos = 0;
         public static int segundos = 0;
         public static int opcao;
 
         public static double tempoDisponivelTotal;
+
         public static TimeSpan conversaoTempoDisponivelTotal;
         public static TimeSpan tempoDisponivel;
         public static TimeSpan tempoHoras;
@@ -31,7 +30,7 @@ namespace MyWeatherCalculator
         {
             Console.Clear();
             Console.WriteLine("\n\tBem vindo a Calculadora do Tempo!\t\n");
-            Operacao();
+            CapturarDados();
             MenuCriarTarefas();
             Console.ReadKey();
         }
@@ -45,21 +44,27 @@ namespace MyWeatherCalculator
         }
         public static void Operacao()
         {
-            CapturarDados();
             tempoHoras = TimeSpan.FromHours(horas);
             tempoMinutos = TimeSpan.FromMinutes(minutos);
             tempoDisponivel = tempoHoras + tempoMinutos;
 
-            conversaoTempoDisponivelTotal = TimeSpan.FromMinutes(tempoDisponivelTotal);
-            tempoRestante = tempoDisponivel - conversaoTempoDisponivelTotal;
+            tempoRestante = tempoDisponivel - TimeSpan.FromMinutes(tempoDisponivelTotal);
+        }
+        public static void ExibirTarefas()
+        {
+            for (int i = 0; i < tempoTarefa.Count; i++)
+            {
+                tempoDisponivelTotal = tempoTarefa.Sum();
 
-            ExibirTempoDisponivel();
+                Console.WriteLine($"{nomeTarefa[i]}: \t\t\t{tempoTarefa[i]}");
+            }
+            Console.WriteLine($"Tempo Disponível Total:\t{tempoDisponivelTotal}");
         }
 
         public static void ExibirTempoDisponivel()
         {
-            Console.WriteLine($"Você tem {tempoDisponivel} disponível");
-            Console.WriteLine($"Você tem {tempoRestante} restante");
+            Console.WriteLine($"Você tem {tempoDisponivel} disponíveis");
+            Console.WriteLine($"Você tem {tempoRestante} restantes");
         }
 
         public static void MenuCriarTarefas()
@@ -100,17 +105,6 @@ namespace MyWeatherCalculator
             }
         }
 
-        public static void ExibirTarefas()
-        {
-            for (int i = 0; i < tempoTarefa.Count; i++)
-            {
-                tempoDisponivelTotal = tempoTarefa.Sum();
-
-                Console.WriteLine($"{nomeTarefa[i]}: \t\t\t{tempoTarefa[i]}");
-            }
-            Console.WriteLine($"Tempo Disponível Total:\t{tempoDisponivelTotal}");
-        }
-
         public static void CriarTarefas()
         {
             Console.Write("Digite o nome da tarefa: ");
@@ -118,6 +112,7 @@ namespace MyWeatherCalculator
             Console.Write("Digite o tempo dessa tarefa: ");
             tempoTarefa.Add(double.Parse(Console.ReadLine()));
             ExibirTarefas();
+            Operacao();
             MenuCriarTarefas();
         }
     }
