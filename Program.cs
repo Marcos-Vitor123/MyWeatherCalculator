@@ -41,6 +41,7 @@ namespace MyWeatherCalculator
             Console.Write("E quantos minutos você tem? ");
             minutos = int.Parse(Console.ReadLine());
         }
+        
         public static void Operacao()
         {
             tempoHoras = TimeSpan.FromHours(horas);
@@ -90,6 +91,7 @@ namespace MyWeatherCalculator
                 {
                     ExibirTarefas();
                     ExibirTempoDisponivel();
+                    //Salvar();
                     break;
                 }
                 case 1:
@@ -115,5 +117,27 @@ namespace MyWeatherCalculator
             Operacao();
             MenuCriarTarefas();
         }
+
+
+        // Em desenvolvimento
+/*
+        public static void Salvar() 
+        {
+            string[] linhas = 
+            {
+                $"{nomeTarefa[i]}: \t\t\t{tempoTarefa[i]}",
+                $"\nTempo em minutos Total:\t{tempoDisponivelTotal}\n"
+            };
+
+            string caminho = Environment.GetFolderPath(Environment.SpecialFolder);
+
+            using (StreamWriter saidaArquivo = new StreamWriter(Path.Combine(caminho, @"D:\\Minha Calculadora do tempo.txt")))
+            {
+                foreach (string linha in linhas)
+                {
+                    saidaArquivo.WriteLine(linha);
+                }
+            }
+        }*/
     }
 }
