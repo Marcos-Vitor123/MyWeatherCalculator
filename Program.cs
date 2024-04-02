@@ -16,7 +16,6 @@ namespace MyWeatherCalculator
 
         public static double tempoDisponivelTotal;
 
-        public static TimeSpan conversaoTempoDisponivelTotal;
         public static TimeSpan tempoDisponivel;
         public static TimeSpan tempoHoras;
         public static TimeSpan tempoMinutos;
@@ -59,13 +58,13 @@ namespace MyWeatherCalculator
 
                 Console.WriteLine($"{nomeTarefa[i]}: \t\t\t{tempoTarefa[i]}");
             }
-            Console.WriteLine($"\nTempo Disponível Total:\t{tempoDisponivelTotal}\n");
+            Console.WriteLine($"\nTempo em minutos Total:\t{tempoDisponivelTotal}\n");
         }
 
         public static void ExibirTempoDisponivel()
         {
-            Console.WriteLine($"Você tem {tempoDisponivel} disponíveis");
-            Console.WriteLine($"Você tem {tempoRestante} restantes\n");
+            Console.WriteLine($"Você tem {tempoDisponivel} minutos disponíveis");
+            Console.WriteLine($"Você tem {tempoRestante} minutos restantes\n");
         }
 
         public static void MenuCriarTarefas()
