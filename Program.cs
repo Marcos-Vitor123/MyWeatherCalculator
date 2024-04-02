@@ -52,19 +52,20 @@ namespace MyWeatherCalculator
         }
         public static void ExibirTarefas()
         {
+            Console.WriteLine("\nTarefas \t\tTempo\t\n");
             for (int i = 0; i < tempoTarefa.Count; i++)
             {
                 tempoDisponivelTotal = tempoTarefa.Sum();
 
                 Console.WriteLine($"{nomeTarefa[i]}: \t\t\t{tempoTarefa[i]}");
             }
-            Console.WriteLine($"Tempo Disponível Total:\t{tempoDisponivelTotal}");
+            Console.WriteLine($"\nTempo Disponível Total:\t{tempoDisponivelTotal}\n");
         }
 
         public static void ExibirTempoDisponivel()
         {
             Console.WriteLine($"Você tem {tempoDisponivel} disponíveis");
-            Console.WriteLine($"Você tem {tempoRestante} restantes");
+            Console.WriteLine($"Você tem {tempoRestante} restantes\n");
         }
 
         public static void MenuCriarTarefas()
