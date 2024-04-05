@@ -13,6 +13,7 @@ namespace MyWeatherCalculator
         public static int minutos = 0;
         public static int segundos = 0;
         public static int opcao;
+        public static int i;
 
         public static double tempoDisponivelTotal;
 
@@ -53,7 +54,7 @@ namespace MyWeatherCalculator
         public static void ExibirTarefas()
         {
             Console.WriteLine("\nTarefas \t\tTempo\t\n");
-            for (int i = 0; i < tempoTarefa.Count; i++)
+            for (i = 0; i < tempoTarefa.Count; i++)
             {
                 tempoDisponivelTotal = tempoTarefa.Sum();
 
@@ -72,6 +73,7 @@ namespace MyWeatherCalculator
         {
             Console.WriteLine("0 - Para terminar as tarefas.");
             Console.WriteLine("1 - Para criar as tarefas.");
+            Console.WriteLine("2 - Para salvar o arquivo.");
 
             Console.Write("Digite a opção: ");
             opcao = int.Parse(Console.ReadLine());
@@ -91,7 +93,6 @@ namespace MyWeatherCalculator
                 {
                     ExibirTarefas();
                     ExibirTempoDisponivel();
-                    //Salvar();
                     break;
                 }
                 case 1:
@@ -99,6 +100,9 @@ namespace MyWeatherCalculator
                     CriarTarefas();
                     break; 
                 }
+                case 2:
+                    Salvar();
+                    break;
                 default:
                 {
                     Console.WriteLine("Opção inválida!");
@@ -120,24 +124,25 @@ namespace MyWeatherCalculator
 
 
         // Em desenvolvimento
-/*
+
         public static void Salvar() 
         {
             string[] linhas = 
-            {
-                $"{nomeTarefa[i]}: \t\t\t{tempoTarefa[i]}",
+            [
+                //$"{nomeTarefa[i]}: \t\t\t{tempoTarefa[i]}",
                 $"\nTempo em minutos Total:\t{tempoDisponivelTotal}\n"
-            };
+            ];
 
-            string caminho = Environment.GetFolderPath(Environment.SpecialFolder);
+            string caminho = @"D:\";
 
-            using (StreamWriter saidaArquivo = new StreamWriter(Path.Combine(caminho, @"D:\\Minha Calculadora do tempo.txt")))
+            using (StreamWriter saidaArquivo = new StreamWriter(Path.Combine(caminho, "Minha Calculadora do tempo.txt")))
             {
                 foreach (string linha in linhas)
                 {
                     saidaArquivo.WriteLine(linha);
                 }
+                Console.WriteLine("\nArquivo salvo com sucesso!");
             }
-        }*/
+        }
     }
 }
