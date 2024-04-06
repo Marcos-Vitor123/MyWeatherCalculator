@@ -127,22 +127,27 @@ namespace MyWeatherCalculator
 
         public static void Salvar() 
         {
-            string[] linhas = 
-            [
-                //$"{nomeTarefa[i]}: \t\t\t{tempoTarefa[i]}",
-                $"\nTempo em minutos Total:\t{tempoDisponivelTotal}\n"
-            ];
-
-            string caminho = @"D:\";
-
-            using (StreamWriter saidaArquivo = new StreamWriter(Path.Combine(caminho, "Minha Calculadora do tempo.txt")))
+            for (int j = 0; j < tempoTarefa.Count; j++)
             {
-                foreach (string linha in linhas)
+                tempoDisponivelTotal = tempoTarefa.Sum();
+                
+                string[] linhas = 
+                [
+                    $"{nomeTarefa[j]}: \t\t\t{tempoTarefa[j]}",
+                    $"\nTempo em minutos Total:\t{tempoDisponivelTotal}\n"
+                ];
+
+                string caminho = @"D:\";
+
+                using (StreamWriter saidaArquivo = new StreamWriter(Path.Combine(caminho, "Minha Calculadora do tempo.txt")))
                 {
-                    saidaArquivo.WriteLine(linha);
+                    foreach (string linha in linhas)
+                    {
+                        saidaArquivo.WriteLine(linha);
+                    }
                 }
-                Console.WriteLine("\nArquivo salvo com sucesso!");
             }
+            Console.WriteLine("\nArquivo salvo com sucesso!");
         }
     }
 }
