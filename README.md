@@ -40,7 +40,7 @@ Aqui é onde se tem uma visão geral sobre o desenvolvimento e quais caminhos di
         - [ ] Igualar maiúsculas e minúsculas
     - [x] Armazenar dados
     - [x] Imprimir na tela 
-    - [ ] Salvar em um arquivo .txt
+    - [x] Salvar em um arquivo .txt
 
 - [x] Cabeçalhos
     - [x] Bem vindo a Calculadora do Tempo!
