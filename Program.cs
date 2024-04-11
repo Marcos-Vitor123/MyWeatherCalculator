@@ -133,7 +133,8 @@ namespace MyWeatherCalculator
                 $"\nTempo em minutos Total:\t{tempoDisponivelTotal}\n"
             ];
 
-            string caminho = @"D:\";
+            Console.Write("\nQual o caminho para salvar? ");
+            string caminho = Console.ReadLine();
 
             using (StreamWriter saidaArquivo = new StreamWriter(Path.Combine(caminho, "Minha Calculadora do tempo.txt")))
             {
